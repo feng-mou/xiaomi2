@@ -8,6 +8,10 @@
         public function index(){
             return $this->fetch('./Login');
         } 
+        /*
+         2020年9月1日
+                        登录              
+                */
         public function loginYz(){
             $captcha=new Captcha();//实例化判断验证码是否一致方法
             //解析成数组
@@ -25,6 +29,7 @@
                 return json(['code' => 404, 'data' => '', 'msg' => '密码不能为空']);
             }
             $obj=new LoginModel();
+            $pass=md5($pass);
             $result=$obj->loginYz($name,$pass);
             if($result=='1'){
                 return json(['code' => 404, 'data' => '', 'msg' => '账号不存在']);

@@ -8,6 +8,10 @@
         public function index(){
             return $this->fetch('./register');
         }
+        /*
+         2020年9月1日
+                        注册 
+       */
         public function registerYz(){
             $captcha=new Captcha();
             $data=parseParams(input('post.data'));
