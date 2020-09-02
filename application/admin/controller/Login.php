@@ -26,7 +26,6 @@
             }
             $obj=new LoginModel();
             $result=$obj->loginYz($name,$pass);
-            //var_dump($result);
             if($result=='1'){
                 return json(['code' => 404, 'data' => '', 'msg' => '账号不存在']);
             }else if($result=='2'){
