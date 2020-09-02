@@ -25,7 +25,7 @@
                 return json(['code' => 404, 'data' => '', 'msg' => '该字符串不全部是英文,错误的']);
             }
             
-            if($pass==null || strlen($pass)>15){
+            if($pass==null || strlen($pass)>15 || strlen($pass)<7){
                 return json(['code' => 404, 'data' => '', 'msg' => '密码格式错误']);
             }
             
@@ -33,7 +33,7 @@
                 return json(['code' => 404, 'data' => '', 'msg' => '密码不一致']);
             }
             
-            if($tel==null || strlen($tel)>15){
+            if($tel==null || strlen($tel)>11 || strlen($tel)<11){
                 return json(['code' => 404, 'data' => '', 'msg' => '手机格式错误']);
             }
             
