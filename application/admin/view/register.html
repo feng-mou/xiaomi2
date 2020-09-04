@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="regist_submit">
-					<input class="submit" type="submit" name="submit" value="立即注册" onclick="toRegister()">
+					<input class="submit" type="button" name="submit" value="立即注册" onclick="toRegister()">
 				</div>
 				
 			</div>
@@ -52,7 +52,7 @@
 	                alert(data.msg);
 	            }else{
 	                alert(data.msg);
-	                location.href=data.data;
+	                window.location.href=data.data;
 	            }
 	        }
 	    });

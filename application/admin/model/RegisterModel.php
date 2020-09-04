@@ -13,7 +13,7 @@
             }
             $registerData=[
                 'name'=>$name,
-                'pass'=>$pass,
+                'pass'=>"$pass",
                 'tel'=>$tel,
                 'register_time'=>$time
             ];

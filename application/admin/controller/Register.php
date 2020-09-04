@@ -1,7 +1,8 @@
 <?php 
     namespace app\admin\controller;
     use app\admin\controller\Base;
-    use think\captcha\Captcha;
+    //验证码
+    //use think\captcha\Captcha;
     //注册账号密码
     use app\admin\model\RegisterModel;
     class Register extends Base{
@@ -13,7 +14,7 @@
                         注册 
        */
         public function registerYz(){
-            $captcha=new Captcha();
+            //$captcha=new Captcha();
             $data=parseParams(input('post.data'));
             $name=$data['username'];
             $pass=$data['password'];
@@ -41,13 +42,13 @@
                 return json(['code' => 404, 'data' => '', 'msg' => '手机格式错误']);
             }
             
-            if($yzm==null){
+            /*if($yzm==null){
                 return json(['code' => 404, 'data' => '', 'msg' => '验证码不能为空']);
-            }
+            }*/
             
-            if(!$captcha->check($yzm)){
+            /*if(!$captcha->check($yzm)){
                 return json(['code' => 404, 'data' => '', 'msg' => '验证码不一致']);
-            }
+            }*/
             
             $mpass=md5($pass);
             $time=date('Y-m-d h:i:s',time());

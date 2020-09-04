@@ -16,7 +16,7 @@
             }
             
             //查数据
-            $arr=Db::name('commodity')->where('commodity_class',$id)->limit(0,10)->select();
+            $arr=Db::name('commodity')->where('commodity_class',$id)->limit(0,5)->select();
             $count=Db::name('commodity')->where('commodity_class',$id)->count();
             if($count==0){
                 $this->success('没有货', 'admin/index/index');

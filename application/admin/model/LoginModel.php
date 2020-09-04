@@ -14,7 +14,7 @@
             
             $loginData=[
                 'name'=>$name,
-                'pass'=>$pass
+                'pass'=>"$pass"
             ];
             $result2=Db::name('user')->where($loginData)->count();
             

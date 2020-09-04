@@ -38,7 +38,7 @@
 					</div>
 				</div>
 				<div class="login_submit">
-					<input class="submit" type="submit" name="submit" value="立即登录" onclick="dd()">
+					<input class="submit" type="button" value="立即登录" onclick="dd()">
 				</div>
 				
 			</div>
@@ -57,13 +57,13 @@
 	    $.ajax({
 	        type:"POST",
 	        url:"./loginYz",
-	        data:{'data' : $('#commentForm').serialize()},// 你的formid
+	        data:{'data' : $('#commentForm').serialize()},
 	        success: function(data) {
 	            if(data.code == 404){
 	                alert(data.msg);
 	            }else{
 	                alert(data.msg);
-	                location.href=data.data;
+	                window.location.href=data.data;
 	            }
 	        }
 	    });
