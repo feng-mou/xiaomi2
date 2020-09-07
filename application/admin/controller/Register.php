@@ -1,11 +1,12 @@
 <?php 
     namespace app\admin\controller;
     use app\admin\controller\Base;
+    use think\Controller;
     //验证码
     //use think\captcha\Captcha;
     //注册账号密码
     use app\admin\model\RegisterModel;
-    class Register extends Base{
+    class Register extends Controller{
         public function index(){
             return $this->fetch('./register');
         }

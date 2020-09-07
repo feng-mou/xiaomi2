@@ -13,7 +13,7 @@
 			<div class="top center">
 				<div class="left fl">
 					<ul>
-						<li><a href="http://www.mi.com/" target="_blank">小米商城</a></li>
+						<li><a href="{:url('admin/index/index')}" target="_blank">小米商城</a></li>
 						<li>|</li>
 						<li><a href="">MIUI</a></li>
 						<li>|</li>
@@ -36,12 +36,12 @@
 					</ul>
 				</div>
 				<div class="right fr">
-					<div class="gouwuche fr"><a href="">购物车</a></div>
+					<div class="gouwuche fr"><a href="{:url('admin/Gowuche/index')}">购物车</a></div>
 					<div class="fr">
 						<ul>
-							<li><a href="./login.html" target="_blank">登录</a></li>
+							<li><a href="{:url('admin/Login/index')}" target="_blank">登录</a></li>
 							<li>|</li>
-							<li><a href="./register.html" target="_blank" >注册</a></li>
+							<li><a href="{:url('admin/Register/index')}" target="_blank" >注册</a></li>
 							<li>|</li>
 							<li><a href="">消息通知</a></li>
 						</ul>
@@ -193,11 +193,10 @@
 		//alert('1');
 	    $.ajax({
 	        type:"POST",
-	        url:"{:url('admin/Gowuche/index')}",
+	        url:"{:url('admin/Gowuche/submit_order')}",
 	        data:{'data' :$('#editionForm').serialize()},
 	        success: function(data) {
-	        	alert(data);
-	            
+	        	alert(data.msg);
 	        }
 	    });
 	}
@@ -211,7 +210,7 @@
 				divs[j].style.display="block";
 				edition[j].style.checked=true;
 			}else{
-				lis[j].style.background="#EBF1F7";
+				lis[j].style.background="#ffffff";
 				lis[j].style.borderBottom="1px solid #B5CBD9";
 				divs[j].style.display="none";
 				edition[j].style.checked=false;

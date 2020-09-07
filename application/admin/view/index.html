@@ -35,7 +35,7 @@
 					</ul>
 				</div>
 				<div class="right fr">
-					<div class="gouwuche fr"><a href="">购物车</a></div>
+					<div class="gouwuche fr"><a href="{:url('admin/Gowuche/index')}">购物车</a></div>
 					<div class="fr">
 						<ul>
 							<li><a href="{:url('admin/Login/index')}" target="_Self">登录</a></li>
@@ -56,11 +56,11 @@
 		<div class="banner_x center">
 			<a href="./index.html" target="_blank"><div class="logo fl"></div></a>
 			<a href=""><div class="ad_top fl"></div></a>
-			<div class="nav fl">{$Request.session.name}
+			<div class="nav fl">{$Request.session.name_id}
 				<ul>
 					<!-- <a href="{:url('admin/liebiao/index')}" target="_blank">小米手机</a></li> --><li>
 					{foreach name='arr' item='vo'}
-						<li><a href="{:url('admin/liebiao/index',['id'=>$vo.id])}">{$vo.name}</a></li>
+						<li><a href="{:url('admin/liebiao/index',['id'=>$vo.id,'fy_id'=>1])}">{$vo.name}</a></li>
 					{/foreach}
 				</ul>
 			</div>

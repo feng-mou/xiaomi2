@@ -11,7 +11,7 @@
                 //账号不存在
                 return '1';
             }
-            
+            //$result3=Db::name('user')->where('name',$name)->select();
             $loginData=[
                 'name'=>$name,
                 'pass'=>"$pass"
@@ -22,9 +22,18 @@
                 //密码错误
                 return '2';
             }else{
+                //session('name_id',$result3['id']);
                 //账号密码正确
                 return '3';
             }
         } 
+        
+        public function yy($name,$pass){
+            $result3=Db::name('user')->where('name',$name)->select();
+            foreach($result3 as $a=>$k){
+                $id=$k['id'];
+            }
+            return $id;
+        }
     }
 ?>

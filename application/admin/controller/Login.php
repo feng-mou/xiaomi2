@@ -1,11 +1,12 @@
 <?php 
     namespace app\admin\controller;
-    use app\admin\controller\Base;
+    //use app\admin\controller\Base;
+    use think\Controller;
     use think\captcha\Captcha;
     //use think\Session;
     //验证账号密码
     use app\admin\model\LoginModel;
-    class Login extends Base{
+    class Login extends Controller{
         public function index(){
             return $this->fetch('./Login');
         } 
@@ -41,6 +42,8 @@
                 return json(['code' => 404, 'data' => '', 'msg' => '密码错误']);
             }else{
                 session('name',$name);
+                $result2=$obj->yy($name,$pass2);
+                session('name_id',$result2);
                 return json(['code' => 200, 'data' => url('admin/index/index'), 'msg' => '登录成功']);
             }
         }
