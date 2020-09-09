@@ -20,7 +20,9 @@
 				<ul>
 					<li><a href="{:url('admin/Login/index')}" target="_blank">登录</a></li>
 					<li>|</li>
-					<li><a href="{:url('admin/Register/index')}" target="_blank">注册</a></li>	
+					<li><a href="{:url('admin/Register/index')}" target="_blank">注册</a></li>
+					<li>|</li>
+					<li><a href="{:url('admin/Dingdanzhongxin/index')}" target="_blank">订单中心</a></li>	
 				</ul>
 				
 			</div>
@@ -34,13 +36,29 @@
 						<input type="checkbox" value="quanxuan" class="quanxuan" />全选
 					</div>
 					<div class="sub_top fl">商品名称</div>
-					<div class="sub_top fl">单价</div>
+					<div class="sub_top fl">单价(元)</div>
 					<div class="sub_top fl">数量</div>
 					<div class="sub_top fl">小计</div>
 					<div class="sub_top fr">操作</div>
 					<div class="clear"></div>
 				</div>
+				{foreach name='result' item='vo'}
 				<div class="content2 center">
+					<div class="sub_content fl ">
+						<input type="checkbox" value="quanxuan" class="quanxuan" />
+					</div>
+					<div class="sub_content fl"><img src="__IMAGE__/{$vo.commodity_img}" width="65px"></div>
+					<div class="sub_content fl ft20">{$vo.commodity_name.$vo.commodity_edition}</div>
+					<div class="sub_content fl ">{$vo.commodity_money}</div>
+					<div class="sub_content fl">
+						<input class="shuliang" type="text" value="1" step="1" min="1"disabled="disabled" >
+					</div>
+					<div class="sub_content fl">{$vo.commodity_money}</div>
+					<div class="sub_content fl"><a href="">×</a></div><!-- {$vo.commodity_img} -->
+					<div class="clear"></div>
+					
+				</div>
+				<!--<div class="content2 center">
 					<div class="sub_content fl ">
 						<input type="checkbox" value="quanxuan" class="quanxuan" />
 					</div>
@@ -53,21 +71,8 @@
 					<div class="sub_content fl">2499元</div>
 					<div class="sub_content fl"><a href="">×</a></div>
 					<div class="clear"></div>
-				</div>
-				<div class="content2 center">
-					<div class="sub_content fl ">
-						<input type="checkbox" value="quanxuan" class="quanxuan" />
-					</div>
-					<div class="sub_content fl"><img src="__IMAGE__/gwc_xiaomi6.jpg"></div>
-					<div class="sub_content fl ft20">小米6全网通6GB内存+64GB 亮黑色</div>
-					<div class="sub_content fl ">2499元</div>
-					<div class="sub_content fl">
-						<input class="shuliang" type="number" value="1" step="1" min="1" >
-					</div>
-					<div class="sub_content fl">2499元</div>
-					<div class="sub_content fl"><a href="">×</a></div>
-					<div class="clear"></div>
-				</div>
+				</div>-->
+				{/foreach}
 			</div>
 			<div class="jiesuandan mt20 center">
 				<div class="tishi fl ml20">
@@ -80,7 +85,7 @@
 				</div>
 				<div class="jiesuan fr">
 					<div class="jiesuanjiage fl">合计（不含运费）：<span>2499.00元</span></div>
-					<div class="jsanniu fr"><input class="jsan" type="submit" name="jiesuan"  value="去结算"/></div>
+					<div class="jsanniu fr"><input class="jsan" type="button" name="jiesuan"  value="去结算"/></div>
 					<div class="clear"></div>
 				</div>
 				<div class="clear"></div>
@@ -92,12 +97,12 @@
 
 	
 	<!-- footer -->
-	<footer class="center">
+	<!--<footer class="center">
 			
 			<div class="mt20">小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</div>
 			<div>©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</div> 
 			<div>违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</div>
-		</footer>
+		</footer>-->
 
 	</body>
 </html>

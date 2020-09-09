@@ -3,7 +3,7 @@
     use think\Model;
     use think\Db;
     use think\Session;
-    class GowucheModel extends Model{
+    class GouwucheModel extends Model{
        public function order($id){
            $result=Db::name('edition_money')->where('id',$id)->select();
            /*foreach($result as $a=>$k){
