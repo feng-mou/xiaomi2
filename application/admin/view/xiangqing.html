@@ -36,14 +36,14 @@
 					</ul>
 				</div>
 				<div class="right fr">
-					<div class="gouwuche fr"><a href="{:url('admin/Gowuche/index')}">购物车</a></div>
+					<div class="gouwuche fr"><a href="{:url('admin/Gouwuche/index')}">购物车</a></div>
 					<div class="fr">
 						<ul>
 							<li><a href="{:url('admin/Login/index')}" target="_blank">登录</a></li>
 							<li>|</li>
 							<li><a href="{:url('admin/Register/index')}" target="_blank" >注册</a></li>
 							<li>|</li>
-							<li><a href="">消息通知</a></li>
+							<li><a href="{:url('admin/SelfInfo/index')}">个人中心</a></li>
 						</ul>
 					</div>
 					<div class="clear"></div>
@@ -59,15 +59,9 @@
 			<a href=""><div class="ad_top fl"></div></a>
 			<div class="nav fl">
 				<ul>
-					<li><a href="">小米手机</a></li>
-					<li><a href="">红米</a></li>
-					<li><a href="">平板·笔记本</a></li>
-					<li><a href="">电视</a></li>
-					<li><a href="">盒子·影音</a></li>
-					<li><a href="">路由器</a></li>
-					<li><a href="">智能硬件</a></li>
-					<li><a href="">服务</a></li>
-					<li><a href="">社区</a></li>
+					{foreach name='acg' item='ak'}
+						<li><a href="{:url('admin/liebiao/index',['id'=>$ak.id,'fy_id'=>1])}">{$ak.name}</a></li>
+					{/foreach}
 				</ul>
 			</div>
 			<div class="search fr">
@@ -193,10 +187,15 @@
 		//alert('1');
 	    $.ajax({
 	        type:"POST",
-	        url:"{:url('admin/Gowuche/submit_order')}",
+	        url:"{:url('admin/Gouwuche/submit_order')}",
 	        data:{'data' :$('#editionForm').serialize()},
 	        success: function(data) {
-	        	alert(data.msg);
+	        	//if(data.code==404){
+	        		alert(data.msg);
+	        	//}else{
+	        	//	alert(data.msg);
+	        		//window.location.href=data.data;
+	        	//}
 	        }
 	    });
 	}

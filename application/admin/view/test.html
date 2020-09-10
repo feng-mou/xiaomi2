@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>layui使用</title>
+	<style href="__LAYUI__/layui/css/layui.css"></style>
+	<script src="__LAYUI__/layui/layui.js"></script>
+</head>
+<body>
+	<form action="" method="post">
+		账号:<input type="text"><br/>
+		<input type="button" value="layui" onclick="vv()">
+	</form>
+	<script>
+		function vv(){
+			layer.open({
+				  type: 1, 
+				  content: '传入任意的文本或html' //这里content是一个普通的String
+				});
+		}
+	</script>
+</body>
+</html>

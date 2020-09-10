@@ -15,6 +15,9 @@
             $edition=Db::name('edition_money')->where('commodity_name',"$name")->select();
             $this->assign('arr',$arr);
             $this->assign('edition',$edition);
+            
+            $acg=Db::name('class')->select();
+            $this->assign('acg',$acg);
             //var_dump($edition);die;
             //$acg[]=$arr;
             //var_dump($acg['commodity_name']);die;
